@@ -2,11 +2,11 @@ import pymongo
 import random
 
 def connection_database():
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-    mydb = myclient["core"]
-    return mydb["user"]
+    myclient = pymongo.MongoClient("mongodb://root:example@localhost:27017/core?authSource=admin")["core"]["user"]
+#     mydb = myclient["core"]
+    return myclient
     
-def insert_many(collection, documents):
+def insert_many_documents(collection, documents):
     collection.insert_many(documents, ordered=False)
 
 col = connection_database()
@@ -19,7 +19,8 @@ for i in range(0,20):
     prof = random.choice(profissao)
     documents = []
     for j in range(0,25000):
+        print(f"Inserindo code: ${i}, numero: ${j}")
         data={"salary":i+j}
-        element = {"id":i, "name":name[i], "profissão":prof, "data": data}
+        element = {"code":i, "name":name[i], "profissao":prof, "data": data}
         documents.append(element)
-    insert_many(col, documents)
+    insert_many_documents(col, documents)
