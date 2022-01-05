@@ -19,8 +19,13 @@ for i in range(0,20):
     prof = random.choice(profissao)
     documents = []
     for j in range(0,25000):
-        print(f"Inserindo code: ${i}, numero: ${j}")
-        data={"salary":i+j}
-        element = {"code":i, "name":name[i], "profissao":prof, "data": data}
+        print(f"Inserindo code: {i}, numero: {j}")
+        if j % 2 == 0:
+            data = {"transaction":i+j}
+            element = {"code":i, "name":name[i], "profissao":prof, "type":"ExampleA", "data": data}
+        else:
+            data = {"statement":i+j, "other":"Fix"}
+            element = {"code":i, "name":name[i], "profissao":prof, "type":"ExampleB", "data": data}
+
         documents.append(element)
     insert_many_documents(col, documents)
