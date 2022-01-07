@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: reactive-app
+  data:
+    mongodb:
+      uri: mongodb://root:example@mongo:27017/core?authSource=admin
+      database: core
+
