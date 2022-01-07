@@ -23,20 +23,18 @@ class ExampleController(
     private val logger = LoggerFactory.getLogger(javaClass)
 
     @GetMapping("/v1/code/{codeId}")
-    suspend fun retrieveAllByCode(
+    fun retrieveAllByCode(
         @PathVariable codeId: Long
-    ): Job {
-
+    ): List<UserEntity> {
 
         val startRequest = LocalDateTime.now()
         logger.info("class=ExampleController, method=getAllByCode, startRequest=${startRequest}, threadName=${Thread.currentThread().name}")
         println("Inicio da requisição: $startRequest")
         return runBlocking {
-            launch {
-                val endRequest = LocalDateTime.now()
-                logger.info("class=ExampleController, method=getAllByCode, endRequest=${endRequest}, between=${Duration.between(startRequest, endRequest).seconds} threadName=${Thread.currentThread().name}")
-                exampleService.retrieveDocumentsByCode(codeId)
-            }
+            val endRequest = LocalDateTime.now()
+            logger.info("class=ExampleController, method=getAllByCode, endRequest=${endRequest}, between=${Duration.between(startRequest, endRequest).seconds} threadName=${Thread.currentThread().name}")
+            logger.info("threadName=${Thread.currentThread().name}")
+            exampleService.retrieveDocumentsByCode(codeId)
         }
     }
 }

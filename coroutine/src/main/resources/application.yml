@@ -3,7 +3,7 @@ spring:
     name: courotine-app
   data:
     mongodb:
-      uri: mongodb://root:example@localhost:27017/core?authSource=admin
+      uri: mongodb://root:example@mongo:27017/core?authSource=admin
 
 server:
-  port: 8086
+  port: 8080

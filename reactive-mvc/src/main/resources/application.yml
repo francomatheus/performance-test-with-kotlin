@@ -3,8 +3,8 @@ spring:
     name: reactive-mvc-app
   data:
     mongodb:
-      uri: mongodb://root:example@localhost:27017/core?authSource=admin
+      uri: mongodb://root:example@mongo:27017/core?authSource=admin
       database: core
 
 server:
-  port: 8087
+  port: 8080

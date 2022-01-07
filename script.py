@@ -18,7 +18,7 @@ profissao = ["Advogado", "Tatuador", "Medico", "Enfermeiro", "Professor", "Auton
 for i in range(0,20):
     prof = random.choice(profissao)
     documents = []
-    for j in range(0,25000):
+    for j in range(0,500):
         print(f"Inserindo code: {i}, numero: {j}")
         if j % 2 == 0:
             data = {"transaction":i+j}

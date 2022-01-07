@@ -14,7 +14,7 @@ class ExampleServiceImpl(
     private val logger = LoggerFactory.getLogger(javaClass)
     
     override fun retrieveDocumentsByCode(codeId: Long): List<UserEntity> {
-        logger.info("class=ExampleServiceImpl, method=retrieveDocumentByCode")
+        logger.info("class=ExampleServiceImpl, method=retrieveDocumentByCode, thread=${Thread.currentThread().name}")
 
         val countByCode = exampleRepository.countByCode(codeId)
 

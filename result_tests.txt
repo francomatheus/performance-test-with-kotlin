@@ -1,0 +1,297 @@
+10 req/s
+
+echo "GET http://localhost:8091/courotine/v1/code/0" | ./vegeta attack -rate=10 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         100, 10.10, 7.32
+Duration      [total, attack, wait]             13.656s, 9.9s, 3.756s
+Latencies     [min, mean, 50, 90, 95, 99, max]  3.153s, 4.163s, 3.967s, 5.119s, 5.609s, 6.009s, 6.158s
+Bytes In      [total, mean]                     6689100, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:100
+Error Set:
+
+echo "GET http://localhost:8092/reactive-mvc/v1/code/0" | ./vegeta attack -rate=10 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         100, 10.10, 3.54
+Duration      [total, attack, wait]             28.255s, 9.9s, 18.355s
+Latencies     [min, mean, 50, 90, 95, 99, max]  17.251s, 22.341s, 22.244s, 26.001s, 26.496s, 27.448s, 27.642s
+Bytes In      [total, mean]                     6689100, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:100
+Error Set:
+
+echo "GET http://localhost:8090/reactive/v1/code/0" | ./vegeta attack -rate=10 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         100, 10.10, 4.01
+Duration      [total, attack, wait]             24.942s, 9.9s, 15.042s
+Latencies     [min, mean, 50, 90, 95, 99, max]  13.945s, 19.045s, 19.097s, 22.55s, 23.455s, 24.002s, 24.049s
+Bytes In      [total, mean]                     6689100, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:100
+Error Set:
+
+echo "GET http://localhost:8093/imperative/v1/code/0" | ./vegeta attack -rate=10 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         100, 10.10, 0.00
+Duration      [total, attack, wait]             39.9s, 9.9s, 30s
+Latencies     [min, mean, 50, 90, 95, 99, max]  30s, 30s, 30s, 30s, 30s, 30s, 30s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:100
+Error Set:
+Get "http://localhost:8093/imperative/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+
+=========================================
+
+20 req/s
+
+echo "GET http://localhost:8091/courotine/v1/code/0" | ./vegeta attack -rate=20 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         200, 20.10, 11.60
+Duration      [total, attack, wait]             17.248s, 9.95s, 7.298s
+Latencies     [min, mean, 50, 90, 95, 99, max]  3.031s, 6.458s, 7.019s, 9.084s, 9.703s, 10.625s, 12.061s
+Bytes In      [total, mean]                     13378200, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:200
+Error Set:
+
+echo "GET http://localhost:8092/reactive-mvc/v1/code/0" | ./vegeta attack -rate=20 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         200, 20.10, 8.98
+Duration      [total, attack, wait]             22.264s, 9.95s, 12.314s
+Latencies     [min, mean, 50, 90, 95, 99, max]  1.461s, 15.216s, 15.617s, 17.083s, 17.386s, 18.011s, 18.162s
+Bytes In      [total, mean]                     13378200, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:200
+Error Set:
+
+echo "GET http://localhost:8090/reactive/v1/code/0" | ./vegeta attack -rate=20 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         200, 20.10, 11.45
+Duration      [total, attack, wait]             17.462s, 9.95s, 7.512s
+Latencies     [min, mean, 50, 90, 95, 99, max]  455.642ms, 8.53s, 9.437s, 10.907s, 11.224s, 11.626s, 11.65s
+Bytes In      [total, mean]                     13378200, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:200
+Error Set:
+
+echo "GET http://localhost:8093/imperative/v1/code/0" | ./vegeta attack -rate=20 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         200, 20.10, 0.00
+Duration      [total, attack, wait]             39.95s, 9.95s, 30s
+Latencies     [min, mean, 50, 90, 95, 99, max]  30s, 30s, 30s, 30s, 30s, 30s, 30.001s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:200
+Error Set:
+Get "http://localhost:8093/imperative/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+=============================================
+
+50 req/s
+
+
+echo "GET http://localhost:8091/courotine/v1/code/0" | ./vegeta attack -rate=50 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         500, 50.10, 16.47
+Duration      [total, attack, wait]             30.365s, 9.98s, 20.385s
+Latencies     [min, mean, 50, 90, 95, 99, max]  3.206s, 13.899s, 14.48s, 19.95s, 20.294s, 21.031s, 21.675s
+Bytes In      [total, mean]                     33445500, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:500
+Error Set:
+
+echo "GET http://localhost:8092/reactive-mvc/v1/code/0" | ./vegeta attack -rate=50 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         500, 50.10, 16.71
+Duration      [total, attack, wait]             29.917s, 9.98s, 19.937s
+Latencies     [min, mean, 50, 90, 95, 99, max]  10.059s, 21.64s, 22.052s, 23.244s, 23.427s, 23.786s, 24.147s
+Bytes In      [total, mean]                     33445500, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:500
+Error Set:
+
+echo "GET http://localhost:8090/reactive/v1/code/0" | ./vegeta attack -rate=50 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         500, 50.10, 15.77
+Duration      [total, attack, wait]             31.701s, 9.98s, 21.721s
+Latencies     [min, mean, 50, 90, 95, 99, max]  18.671s, 24.089s, 24.31s, 25.756s, 26.017s, 26.398s, 26.546s
+Bytes In      [total, mean]                     33445500, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:500
+Error Set:
+
+echo "GET http://localhost:8093/imperative/v1/code/0" | ./vegeta attack -rate=50 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         500, 50.10, 0.00
+Duration      [total, attack, wait]             39.98s, 9.98s, 30s
+Latencies     [min, mean, 50, 90, 95, 99, max]  30s, 30s, 30s, 30s, 30s, 30s, 30s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:500
+Error Set:
+Get "http://localhost:8093/imperative/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+
+============================================
+
+75 req/s
+
+echo "GET http://localhost:8091/courotine/v1/code/0" | ./vegeta attack -rate=75 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         750, 75.10, 22.96
+Duration      [total, attack, wait]             32.671s, 9.987s, 22.684s
+Latencies     [min, mean, 50, 90, 95, 99, max]  3.024s, 14.285s, 15.196s, 22.436s, 22.711s, 23.131s, 24.208s
+Bytes In      [total, mean]                     50168250, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:750
+Error Set:
+
+
+echo "GET http://localhost:8092/reactive-mvc/v1/code/0" | ./vegeta attack -rate=75 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         750, 75.10, 7.48
+Duration      [total, attack, wait]             38.124s, 9.987s, 28.138s
+Latencies     [min, mean, 50, 90, 95, 99, max]  9.424s, 28.774s, 30s, 30s, 30s, 30s, 30.002s
+Bytes In      [total, mean]                     19063935, 25418.58
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           38.00%
+Status Codes  [code:count]                      0:465  200:285
+Error Set:
+Get "http://localhost:8092/reactive-mvc/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+context deadline exceeded (Client.Timeout or context cancellation while reading body)
+
+
+echo "GET http://localhost:8090/reactive/v1/code/0" | ./vegeta attack -rate=75 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         750, 75.10, 5.95
+Duration      [total, attack, wait]             38.513s, 9.987s, 28.526s
+Latencies     [min, mean, 50, 90, 95, 99, max]  16.905s, 29.481s, 30s, 30s, 30s, 30s, 30.001s
+Bytes In      [total, mean]                     15318039, 20424.05
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           30.53%
+Status Codes  [code:count]                      0:521  200:229
+Error Set:
+Get "http://localhost:8090/reactive/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+context deadline exceeded (Client.Timeout or context cancellation while reading body)
+
+==========================
+
+100 req/s
+
+echo "GET http://localhost:8091/courotine/v1/code/0" | ./vegeta attack -rate=100 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         1000, 100.10, 9.08
+Duration      [total, attack, wait]             39.99s, 9.99s, 30s
+Latencies     [min, mean, 50, 90, 95, 99, max]  3.297s, 25.533s, 30s, 30.001s, 30.001s, 30.001s, 30.006s
+Bytes In      [total, mean]                     24281433, 24281.43
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           36.30%
+Status Codes  [code:count]                      0:637  200:363
+Error Set:
+Get "http://localhost:8091/courotine/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+context deadline exceeded (Client.Timeout or context cancellation while reading body)
+
+echo "GET http://localhost:8092/reactive-mvc/v1/code/0" | ./vegeta attack -rate=100 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         1000, 100.10, 0.00
+Duration      [total, attack, wait]             39.99s, 9.99s, 30s
+Latencies     [min, mean, 50, 90, 95, 99, max]  30s, 30s, 30s, 30.001s, 30.001s, 30.001s, 30.001s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:1000
+Error Set:
+Get "http://localhost:8092/reactive-mvc/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+echo "GET http://localhost:8090/reactive/v1/code/0" | ./vegeta attack -rate=100 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         1000, 100.10, 0.00
+Duration      [total, attack, wait]             39.99s, 9.99s, 30s
+Latencies     [min, mean, 50, 90, 95, 99, max]  30s, 30s, 30s, 30.001s, 30.001s, 30.001s, 30.001s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:1000
+Error Set:
+Get "http://localhost:8090/reactive/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+echo "GET http://localhost:8093/imperative/v1/code/0" | ./vegeta attack -rate=100 -duration=10s | ./vegeta report
+Requests      [total, rate, throughput]         1000, 100.10, 0.00
+Duration      [total, attack, wait]             39.991s, 9.99s, 30s
+Latencies     [min, mean, 50, 90, 95, 99, max]  30s, 30.001s, 30.001s, 30.001s, 30.001s, 30.001s, 30.002s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:1000
+Error Set:
+Get "http://localhost:8093/imperative/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+
+===========================================
+
+Teste com o máximo de req/s
+
+echo "GET http://localhost:8091/courotine/v1/code/0" | ./vegeta attack -rate=450 -duration=1s | ./vegeta report
+Requests      [total, rate, throughput]         450, 451.00, 15.72
+Duration      [total, attack, wait]             28.624s, 997.788ms, 27.626s
+Latencies     [min, mean, 50, 90, 95, 99, max]  3.097s, 17.258s, 18.258s, 26.395s, 27.209s, 27.627s, 27.682s
+Bytes In      [total, mean]                     30100950, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:450
+Error Set:
+
+
+echo "GET http://localhost:8091/courotine/v1/code/0" | ./vegeta attack -rate=500 -duration=1s | ./vegeta report
+Requests      [total, rate, throughput]         500, 500.85, 12.42
+Duration      [total, attack, wait]             30.999s, 998.293ms, 30s
+Latencies     [min, mean, 50, 90, 95, 99, max]  3.104s, 19.717s, 21.246s, 30s, 30s, 30.001s, 30.001s
+Bytes In      [total, mean]                     25753035, 51506.07
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           77.00%
+Status Codes  [code:count]                      0:115  200:385
+Error Set:
+context deadline exceeded (Client.Timeout or context cancellation while reading body)
+Get "http://localhost:8091/courotine/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+
+echo "GET http://localhost:8093/imperative/v1/code/0" | ./vegeta attack -rate=10 -duration=1s | ./vegeta report
+Requests      [total, rate, throughput]         10, 11.11, 0.00
+Duration      [total, attack, wait]             30.901s, 900.101ms, 30.001s
+Latencies     [min, mean, 50, 90, 95, 99, max]  30s, 30.001s, 30.001s, 30.001s, 30.001s, 30.001s, 30.001s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:10
+Error Set:
+Get "http://localhost:8093/imperative/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+
+echo "GET http://localhost:8090/reactive/v1/code/0" | ./vegeta attack -rate=500 -duration=1s | ./vegeta report
+Requests      [total, rate, throughput]         500, 501.06, 16.49
+Duration      [total, attack, wait]             30.322s, 997.892ms, 29.324s
+Latencies     [min, mean, 50, 90, 95, 99, max]  17.732s, 26.827s, 27.879s, 29.231s, 29.363s, 29.558s, 29.664s
+Bytes In      [total, mean]                     33445500, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:500
+Error Set:
+
+
+echo "GET http://localhost:8092/reactive-mvc/v1/code/0" | ./vegeta attack -rate=450 -duration=1s | ./vegeta report
+Requests      [total, rate, throughput]         450, 451.02, 17.16
+Duration      [total, attack, wait]             26.222s, 997.731ms, 25.224s
+Latencies     [min, mean, 50, 90, 95, 99, max]  14.408s, 23.497s, 23.947s, 25.099s, 25.287s, 25.484s, 25.674s
+Bytes In      [total, mean]                     30100950, 66891.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:450
+Error Set:
+
+echo "GET http://localhost:8092/reactive-mvc/v1/code/0" | ./vegeta attack -rate=500 -duration=1s | ./vegeta report
+Requests      [total, rate, throughput]         500, 501.02, 2.77
+Duration      [total, attack, wait]             30.999s, 997.968ms, 30.001s
+Latencies     [min, mean, 50, 90, 95, 99, max]  22.076s, 29.572s, 30s, 30.001s, 30.001s, 30.002s, 30.008s
+Bytes In      [total, mean]                     5752626, 11505.25
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           17.20%
+Status Codes  [code:count]                      0:414  200:86
+Error Set:
+Get "http://localhost:8092/reactive-mvc/v1/code/0": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
