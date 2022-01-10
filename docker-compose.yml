@@ -25,75 +25,73 @@ services:
     depends_on:
       - mongo
 
-# Descomente essa parte quando tiver criado a imagem local.
+  reactive:
+    image: francomatheus/reactive:1.0
+    ports:
+      - 8090:8080
+    networks:
+      - performance
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 768M
+        reservations:
+          cpus: '1.0'
+          memory: 768M
+    depends_on:
+      - mongo
 
-#  reactive:
-#    image: reactive:1.0
-#    ports:
-#      - 8090:8080
-#    networks:
-#      - performance
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: '0.5'
-#          memory: 768M
-#        reservations:
-#          cpus: '1.0'
-#          memory: 768M
-#    depends_on:
-#      - mongo
-#
-#  courotine:
-#    image: coroutine:1.0
-#    ports:
-#      - 8091:8080
-#    networks:
-#      - performance
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: '0.5'
-#          memory: 768M
-#        reservations:
-#          cpus: '1.0'
-#          memory: 768M
-#    depends_on:
-#      - mongo
-#
-#  reactive-mvc:
-#    image: reactive-mvc:1.0
-#    ports:
-#      - 8092:8080
-#    networks:
-#      - performance
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: '0.5'
-#          memory: 768M
-#        reservations:
-#          cpus: '1.0'
-#          memory: 768M
-#    depends_on:
-#      - mongo
-#
-#  imperative:
-#    image: imperative:1.0
-#    ports:
-#      - 8093:8080
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: '0.5'
-#          memory: 768M
-#        reservations:
-#          cpus: '1.0'
-#          memory: 768M
-#    networks:
-#      - performance
-#    depends_on:
-#      - mongo
+  courotine:
+    image: francomatheus/coroutine:1.0
+    ports:
+      - 8091:8080
+    networks:
+      - performance
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 768M
+        reservations:
+          cpus: '1.0'
+          memory: 768M
+    depends_on:
+      - mongo
+
+  reactive-mvc:
+    image: francomatheus/reactive-mvc:1.0
+    ports:
+      - 8092:8080
+    networks:
+      - performance
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 768M
+        reservations:
+          cpus: '1.0'
+          memory: 768M
+    depends_on:
+      - mongo
+
+  imperative:
+    image: francomatheus/imperative:1.0
+    ports:
+      - 8093:8080
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 768M
+        reservations:
+          cpus: '1.0'
+          memory: 768M
+    networks:
+      - performance
+    depends_on:
+      - mongo
 
 networks:
   performance:
