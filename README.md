@@ -34,7 +34,7 @@
 | Aplicação | 10 req/s| 20 req/s | 50 req/s| 75 req/s | 100 req/s | 
 |-----------|---------|----------|---------|----------|-----------|
 | Imperativo|   30s   |    30s   |   30s   |   30s    |    30s    |
-| courotine |  4.163s |   6.458s | 13.899s |  14.285s |25.533s(36.30%)|
+| coroutine |  4.163s |   6.458s | 13.899s |  14.285s |25.533s(36.30%)|
 | reativo   | 19.045s |   8.53s  | 27.089s |29.481s(30.53%)|     30s      |
 |reativo-mvc| 22.341s |  15.216s |  21.64s |28.774s(38%)|    30s       |
 
@@ -45,7 +45,7 @@
 | Aplicação | Máximo req | Tempo médio de resposta| 
 |--|--|--|
 | Imperativo | 2 | 30s |
-| courotine | 450 | 17.258s |
+| coroutine | 450 | 17.258s |
 | reativo | 500 | 26.827s |
 | reativo-mvc | 450 | 23.497s |
 
